@@ -28,8 +28,10 @@ public class UserService {
 		if (user.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
 		}
-	
 		return user.get();
 	}
 
+	public User insertUser(User user) {
+		return userRepository.save(user);
+	}
 }
